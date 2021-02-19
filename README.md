@@ -2,6 +2,10 @@
 
 This repo is the source of the DS-Squad datakit. 
 
+# Wiki
+
+https://github.com/Data-Science-Squad/dssquad-datakit/wiki
+
 # Contributing to the repository
 
 ### Clone the repository

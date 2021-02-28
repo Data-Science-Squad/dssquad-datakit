@@ -15,7 +15,7 @@ public class DB {
 		try{  
 			Class.forName("com.mysql.jdbc.Driver");  
 			con=DriverManager.getConnection(  
-			"jdbc:mysql://192.249.124.190:3306/caskey5_buffaloCrime_test","caskey5_ericCaskey","dsSquad12");
+			"jdbc:mysql://192.249.124.190:3306/caskey5_buffaloCrime_test","","");
 			return con;
 		}
 		catch(Exception e) {return null;}

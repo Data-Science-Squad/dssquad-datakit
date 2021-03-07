@@ -1,39 +1,33 @@
-
-/*DELETE CONTENT  OF DAY PREDICATION TABLES*/
-TRUNCATE TABLE police_district_predictions_day;
-TRUNCATE TABLE council_district_predictions_day;
-TRUNCATE TABLE neighborhood_predictions_day;
-TRUNCATE TABLE zip_predictions_day;
-
-/*INSERT INTO TABLE id,name,date,double*/
-INSERT INTO police_district_predictions_day (police_district,dy,predicted_incidents) VALUES ('DISTRICT A','2021-03-06',40.23235), ('DISTRICT B','2021-03-06',38.23235), ('DISTRICT C','2021-03-06',40.23238);
-INSERT INTO council_district_predictions_day (council_district,dy,predicted_incidents) VALUES ('UNIVERSITY','2021-03-06',40.23235), ('NIAGARA','2021-03-06',38.23235), ('DELAWARE','2021-03-06',40.23238);
-INSERT INTO neighborhood_predictions_day (neighborhood,dy,predicted_incidents) VALUES ('Allentown','2021-03-06',40.23235), ('Central','2021-03-06',38.23235), ('First Ward','2021-03-06',40.23238);
-INSERT INTO zip_predictions_day (zipcode,dy,predicted_incidents) VALUES ('14212','2021-03-06',40.23235), ('14207','2021-03-06',38.23235), ('14222','2021-03-06',40.23238);
-
-/*DELETE CONTENT  OF WEEK PREDICATION TABLES*/
-TRUNCATE TABLE police_district_predictions_week;
-TRUNCATE TABLE council_district_predictions_week;
-TRUNCATE TABLE neighborhood_predictions_week;
-TRUNCATE TABLE zip_predictions_week;
-
-/*INSERT INTO TABLE id,name,date,double*/
-INSERT INTO police_district_predictions_week (police_district,end_of_week,predicted_incidents) VALUES ('DISTRICT A','2021-03-06',40.23235), ('DISTRICT B','2021-03-06',38.23235), ('DISTRICT C','2021-03-06',40.23238);
-INSERT INTO council_district_predictions_week (council_district,end_of_week,predicted_incidents) VALUES ('UNIVERSITY','2021-03-06',40.23235), ('NIAGARA','2021-03-06',38.23235), ('DELAWARE','2021-03-06',40.23238);
-INSERT INTO neighborhood_predictions_week (neighborhood,end_of_week,predicted_incidents) VALUES ('Allentown','2021-03-06',40.23235), ('Central','2021-03-06',38.23235), ('First Ward','2021-03-06',40.23238);
-INSERT INTO zip_predictions_week (zipcode,end_of_week,predicted_incidents) VALUES ('14212','2021-03-06',40.23235), ('14207','2021-03-06',38.23235), ('14222','2021-03-06',40.23238);
+/*CREATE TABLES FOR ML PREDICTION / PERFORMANCE*/
+CREATE TABLE predictions(
+   id INT NOT NULL AUTO_INCREMENT,
+   location VARCHAR(50) NOT NULL,
+   level VARCHAR(50) NOT NULL,
+   freq VARCHAR(50) NOT NULL,
+   start_date DATE NOT NULL,   
+	end_date DATE NOT NULL,
+   predicted_incidents FLOAT(8,6) NOT NULL,
+   lower_predicted_incidents FLOAT(8,6) NOT NULL,
+   upper_predicted_incidents FLOAT(8,6) NOT NULL,
+   PRIMARY KEY ( id )
+);
+CREATE TABLE performance(
+   id INT NOT NULL AUTO_INCREMENT,
+   entity VARCHAR(50) NOT NULL,
+   level VARCHAR(50) NOT NULL,
+   freq VARCHAR(50) NOT NULL,
+   rmse FLOAT(8,6) NOT NULL,
+   PRIMARY KEY ( id )
+);
 
 
-/*DELETE CONTENT  OF MONTH PREDICATION TABLES*/
-TRUNCATE TABLE police_district_predictions_month;
-TRUNCATE TABLE council_district_predictions_month;
-TRUNCATE TABLE neighborhood_predictions_month;
-TRUNCATE TABLE zip_predictions_month;
+/*TRUNCATE CONTENTS OF TABLES */
 
+TRUNCATE TABLE predictions;
+TRUNCATE TABLE performance;
 
-/*INSERT INTO TABLE id,name,varchar,double*/
-INSERT INTO police_district_predictions_month(police_district,mnth,predicted_incidents) VALUES ('DISTRICT A','Mar-2021',40.23235), ('DISTRICT B','Mar-2021',38.23235), ('DISTRICT C','Mar-2021',40.23238);
-INSERT INTO council_district_predictions_month (council_district,mnth,predicted_incidents) VALUES ('UNIVERSITY','2021-03-06',40.23235), ('NIAGARA','Mar-2021',38.23235), ('DELAWARE','Mar-2021',40.23238);
-INSERT INTO neighborhood_predictions_month (neighborhood,mnth,predicted_incidents) VALUES ('Allentown','Mar-2021',40.23235), ('Central','Mar-2021',38.23235), ('First Ward','Mar-2021',40.23238);
-INSERT INTO zip_predictions_month (zipcode,mnth,predicted_incidents) VALUES ('14212','Mar-2021',40.23235), ('14207','Mar-2021',38.23235), ('14222','Mar-2021',40.23238);
+/*INSERT INTO TABLES */
 
+INSERT INTO predictions (location,level,freq,start_date,end_date,predicted_incidents,lower_predicted_incidents,upper_predicted_incidents) VALUES ('Allentown','Neighborhood','Daily','2021-03-06','2021-03-06',40.23235,35.333,48.2323232),('Allentown','Neighborhood','Weekly','2021-03-15','2021-03-22',40.23235,35.333,48.2323232),('Allentown','Neighborhood','Monthly','2021-03-01','2021-04-01',40.23235,35.333,48.2323232);
+
+INSERT INTO performance (entity,level,freq,rmse) VALUES ('Allentown','Neighborhood','Weekly',3.3),('Allentown','Neighborhood','Daily',3.5),('Allentown','Neighborhood','Monthly',3.5)

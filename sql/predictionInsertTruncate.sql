@@ -30,4 +30,4 @@ TRUNCATE TABLE performance;
 
 INSERT INTO predictions (location,level,freq,start_date,end_date,predicted_incidents,lower_predicted_incidents,upper_predicted_incidents) VALUES ('Allentown','Neighborhood','Daily','2021-03-06','2021-03-06',40.23235,35.333,48.2323232),('Allentown','Neighborhood','Weekly','2021-03-15','2021-03-22',40.23235,35.333,48.2323232),('Allentown','Neighborhood','Monthly','2021-03-01','2021-04-01',40.23235,35.333,48.2323232);
 
-INSERT INTO performance (entity,level,freq,rmse) VALUES ('Allentown','Neighborhood','Weekly',3.3),('Allentown','Neighborhood','Daily',3.5),('Allentown','Neighborhood','Monthly',3.5)
+INSERT INTO performance (entity,level,freq,rmse) VALUES ('Allentown','Neighborhood','Weekly',3.3),('Allentown','Neighborhood','Daily',3.5),('Allentown','Neighborhood','Monthly',3.5);

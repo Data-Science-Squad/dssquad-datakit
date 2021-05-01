@@ -1,7 +1,9 @@
 import os
+import sys
+sys.path.append('src/zstage/work')
 from datetime import datetime
 from os.path import dirname
-import src.zstage.work.DateRoutines as date
+import DateRoutines as date
 
 jobDesc = ""
 inputFile = ""

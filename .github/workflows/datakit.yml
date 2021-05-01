@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [3.7]
     env:
       #NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
       #NEPTUNE_PROJECT_DEV: ${{ secrets.NEPTUNE_PROJECT_DEV }}
@@ -39,7 +39,7 @@ jobs:
         run: |
           sudo apt-get install python3-mysql.connector
           pip install wheel
-          pip install -r requirements.txt
+          sudo pip install -r requirements.txt
           sudo python src/zstage/main/compile.py
       - name: Invoke workflow in dssquad-ml
         uses: benc-uk/workflow-dispatch@v1

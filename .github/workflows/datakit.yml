@@ -32,14 +32,14 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
         with:
-          ref: develop
+          ref: datakit_origin
 
       - name: Install requirements and run model script
         id: experiment_main
         run: |
           pip install -r requirements.txt
           python src/zstage/main/compile.py
-      - name: Invoke workflow in dssquad-app
+      - name: Invoke workflow in dssquad-ml
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: run prediction

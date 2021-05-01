@@ -1,4 +1,4 @@
-import src.zstage.main.config as config
+import config as config
 import src.zstage.work.db as db
 import src.zstage.work.HandleFile as HandleFile
 import src.zstage.work.DateRoutines as date

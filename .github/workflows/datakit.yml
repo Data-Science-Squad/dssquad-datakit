@@ -39,7 +39,7 @@ jobs:
         run: |
           pip install --upgrade 
           pip install -r requirements.txt
-	  python src/zstage/main/compile.py
+          python src/zstage/main/compile.py
       - name: Invoke workflow in dssquad-app
         uses: benc-uk/workflow-dispatch@v1
         with:

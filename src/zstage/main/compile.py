@@ -113,7 +113,7 @@ def main():
     if "All" in config.jobDesc:
         Compile().compile_crime()
         Compile().compile_dates()
-    HandleFile.HandleFile().logMessage("Completed compile " + config.jobDesc+" " + status)
+    HandleFile.HandleFile().logMessage("Completed compile " + config.jobDesc+" " + str(status))
 
 
 if __name__ == "__main__":

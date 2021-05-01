@@ -41,9 +41,9 @@ def filldata():
     df['longitude'] = lon_list
     crime_df = pd.concat([crime_df[crime_df['latitude'].notna()], df], axis=0)
     # Reading the geojson data provided by https://data.buffalony.gov "https://data.buffalony.gov/Economic-Neighborhood-Development/Neighborhoods/q9bk-zu3p" :
-    nbh_polygon = gpd.read_file(f"{dirname(dirname(dirname(os.getcwd())))}\\Neighborhoods_coordinates.geojson")
-    pd_polygon = gpd.read_file(f"{dirname(dirname(dirname(os.getcwd())))}\\BPD Districts.geojson")
-    cd_polygon = gpd.read_file(f"{dirname(dirname(dirname(os.getcwd())))}\\Council Districts.geojson")
+    nbh_polygon = gpd.read_file(f"Neighborhoods_coordinates.geojson")
+    pd_polygon = gpd.read_file(f"BPD Districts.geojson")
+    cd_polygon = gpd.read_file(f"Council Districts.geojson")
     # Converting the pandas dataframe into a geopandas dataframe(has higher support for geospatial data) :
     gdf = gpd.GeoDataFrame(crime_df, geometry=gpd.points_from_xy(crime_df.longitude, crime_df.latitude))
 

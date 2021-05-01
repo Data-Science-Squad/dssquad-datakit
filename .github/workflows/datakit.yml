@@ -37,7 +37,8 @@ jobs:
       - name: Install requirements and run model script
         id: experiment_main
         run: |
-          pip search mysql-connector
+          pip install mysql-connector-repackaged
+          pip install mysql-connector-python
           pip3 install -r requirements.txt
           sudo python3 src/zstage/main/compile.py
       - name: Invoke workflow in dssquad-ml

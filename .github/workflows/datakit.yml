@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - develop
+      - datakit_origin
+
   schedule:
   - cron: "* * * * 0"
 

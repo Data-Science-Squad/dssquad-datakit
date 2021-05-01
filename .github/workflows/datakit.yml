@@ -37,7 +37,7 @@ jobs:
       - name: Install requirements and run model script
         id: experiment_main
         run: |
-          pip install --upgrade 
+          /opt/hostedtoolcache/Python/3.8.9/x64/bin/python -m pip install --upgrade pip
           pip install -r requirements.txt
           python src/zstage/main/compile.py
       - name: Invoke workflow in dssquad-app

@@ -5,7 +5,7 @@ import numpy as np
 import os
 from os.path import dirname
 from geopy.geocoders import Nominatim
-import src.zstage.main.config as config
+import config as config
 import csv
 
 

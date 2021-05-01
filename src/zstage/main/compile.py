@@ -1,8 +1,8 @@
 import config as config
-import src.zstage.work.db as db
-import src.zstage.work.HandleFile as HandleFile
-import src.zstage.work.DateRoutines as date
-import src.zstage.work.fill_data as filldata
+import db as db
+import HandleFile as HandleFile
+import DateRoutines as date
+import fill_data as filldata
 
 
 entityMap = {}

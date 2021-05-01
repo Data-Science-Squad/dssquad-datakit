@@ -3,9 +3,9 @@ import os
 import datetime
 import requests
 
-import src.zstage.main.config as config
-import src.zstage.main.compile as compile
-import src.zstage.work.db as db
+import config as config
+import compile as compile
+import db as db
 
 
 # Note that the log file created from errors in the file python file will be stored as 'file_log'.

@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
-import src.zstage.work.HandleFile as HandleFile
-import src.zstage.main.config as config
+import HandleFile as HandleFile
+import config as config
 
 
 class DateRoutines:

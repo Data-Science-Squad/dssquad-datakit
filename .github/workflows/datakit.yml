@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7.2]
+        python-version: [3.8]
     env:
       #NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
       #NEPTUNE_PROJECT_DEV: ${{ secrets.NEPTUNE_PROJECT_DEV }}
@@ -37,8 +37,8 @@ jobs:
       - name: Install requirements and run model script
         id: experiment_main
         run: |
+          sudo apt-get install python3-mysql.connector
           pip3 install wheel
-          pip3 install mysql-connector-python-rf 
           pip3 install -r requirements.txt
           sudo python3 src/zstage/main/compile.py
       - name: Invoke workflow in dssquad-ml

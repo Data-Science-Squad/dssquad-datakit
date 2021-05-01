@@ -37,7 +37,9 @@ jobs:
       - name: Install requirements and run model script
         id: experiment_main
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
+	  src/zstage/main/compile.py
       - name: Invoke workflow in dssquad-app
         uses: benc-uk/workflow-dispatch@v1
         with:

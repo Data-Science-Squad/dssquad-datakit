@@ -4,6 +4,8 @@ sys.path.append('src/zstage/work')
 from datetime import datetime
 from os.path import dirname
 import DateRoutines as date
+print(os.getcwd())
+
 
 jobDesc = ""
 inputFile = ""

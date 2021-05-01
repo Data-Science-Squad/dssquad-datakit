@@ -37,10 +37,10 @@ jobs:
       - name: Install requirements and run model script
         id: experiment_main
         run: |
-          sudo apt-get install python3-mysql.connector
-          pip3 install wheel
-          pip3 install -r requirements.txt
-          sudo python3 src/zstage/main/compile.py
+          sudo apt-get install python-mysql.connector
+          pip install wheel
+          pip install -r requirements.txt
+          sudo python src/zstage/main/compile.py
       - name: Invoke workflow in dssquad-ml
         uses: benc-uk/workflow-dispatch@v1
         with:

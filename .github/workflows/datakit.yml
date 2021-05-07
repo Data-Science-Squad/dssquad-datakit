@@ -44,7 +44,7 @@ jobs:
       - name: Invoke workflow in dssquad-ml
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: run prediction
+          workflow: Run Model
           repo: Data-Science-Squad/dssquad-ml
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: dm-test
+          ref: develop

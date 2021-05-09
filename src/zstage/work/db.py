@@ -10,10 +10,10 @@ class DB:
     def __init__(self):
         self.con = None
         self.mycursor = None
-        self.user = 'caskey5_melvinSebastian'
-        self.password = 'dsSquad12'
-        self.host = '192.249.124.190'
-        self.database = 'caskey5_buffaloCrime_test'
+        self.user = os.environ.get('DB_USER')
+        self.password = os.environ.get('DB_PWD')
+        self.host = os.environ.get('DB_HOST')
+        self.database = os.environ.get('DB_DB')
 
     def connect(self):
         try:

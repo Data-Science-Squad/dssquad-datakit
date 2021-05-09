@@ -24,7 +24,7 @@ def setConfig(job):
     global inputURL
     jobDesc = job
     if "Crime" in job:
-        pastDate = date.DateRoutines().minusDays(1)
+        pastDate = date.DateRoutines().minusDays(7)
         inputFile = f"Crime_Incidents.csv"
         logFile = f"logs\\CompileCrime_" \
                   f"{datetime.now().strftime('%d_%m_%Y_%H_%M_%S')}.txt"
